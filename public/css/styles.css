@@ -1,0 +1,116 @@
+/* ----- Custom Styles ----- */
+
+/* ---------- Body Style ---------- */
+.body {
+  background-color: #EDE7E3;
+
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 20px;
+}
+
+/* ---------- Fixed Header & Sidebar ---------- */
+/* Header Style */
+.header {
+  position: fixed; /* fixed at the top when scrolling */
+  top: 0;
+  left: 0;
+
+  height: 60px;
+  width: 100%;
+
+  background-color: #82C0CC;
+  border: 0;
+  border-radius: 0 0 8px 0; /* top-left | top-right | bottom-right | bottom-left */
+  box-shadow: 2px 0 8px #999999; /* offset-x | offset-y | blur-radius | spread-radius | color */
+}
+
+/* Font Style of the header title */
+.header-title {
+  padding-top: 12px;
+  padding-left: 20%;
+
+  font-family: 'Nunito', sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #1a1a1a;
+}
+
+/* Fixed Sidebar with icons & text */
+.sidebar {
+  position: fixed; /* fixed at the left site when scrolling */
+  top: 60px; /* Starts at the end of the header height */
+  left: 0;
+  bottom: 0;
+  width: 15%; /* Takes up only 15% of the total screen width */
+  overflow-x: hidden; /* Prrevents horizontal scrolling*/
+
+  background-color: #fff;
+  border: 0;
+  border-radius: 0 8px 0 0; /* top-left | top-right | bottom-right | bottom-left */
+  box-shadow: 0 2px 8px #cccccc; /* offset-x | offset-y | blur-radius | spread-radius | color */
+}
+
+/* Container with icons */
+.icons-container {
+  margin: 36px 5px; /* top & bottom | left& right */
+  position: static; /* positioned according to the flow of the page */
+
+  text-align: center;
+  color: #808080;
+}
+
+.icons-container a {
+  text-decoration: none;
+  color: #808080;
+}
+
+/* Size of the icons */
+.material-icons {
+  font-size: 36px;
+}
+
+/* Font sytle of the icons text */
+.icons p {
+font-family: 'Nunito', sans-serif;
+font-size: 16px;
+}
+
+/* Change color of current icon */
+.icons-container a:active{
+  color: #ffa62b;
+  font-weight: 600;
+  text-decoration: underline solid 2px;
+}
+
+/* Change color of icons & text on hover */
+.icons-container a:hover {
+  color: #ffa62b;
+  text-decoration: underline solid 2px;
+}
+
+
+
+/* ---------- Page Content ---------- */
+.contents-container {
+margin: 96px 5% 4% 20%; /* top | right | bottom | left*/
+}
+
+
+
+/* ----------- Media query ---------- */
+/* Change layout for smaller screen sizes */
+@media only screen and (max-width: 768px) {
+  .contents-container { margin-top: 76px; }
+
+  .header { height: 40px; }
+
+  .header-title {
+    padding-top: 10px;
+    font-size: 18px;
+  }
+
+  .sidebar { top: 40px; }
+
+  .icons p { display: none; }
+}
