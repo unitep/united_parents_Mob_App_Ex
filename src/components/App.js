@@ -9,20 +9,54 @@ import SearchUser from "../pages/SearchUser";
 import Chats from "../pages/Chats";
 import Help from "../pages/HelpFinances";
 import Settings from "../pages/Settings";
+import ProtectedRoutes from "./ProtectedRoutes";
+import Registration from "../pages/Registration";
+import { Container, Row, Col} from "react-bootstrap";
+import {UserAuthContextProvider} from "../context/UserAuthContext"
 
 
 
 function App() {
     return (
-        <div>
+        <Container>
+        <Row>
+            <Col>
+            <UserAuthContextProvider>
+            <Routes>
+            
+            <Route path="my-profile" element={<ProtectedRoutes><MyProfile/></ProtectedRoutes>} /> 
+            <Route path="/search-user" element={<ProtectedRoutes><SearchUser/></ProtectedRoutes>} /> 
+            <Route path="/chats" element={<ProtectedRoutes><Chats/></ProtectedRoutes>} /> 
+            <Route path="/help-finances" element={<ProtectedRoutes><Help/></ProtectedRoutes>} /> 
+            <Route path="/settings" element={<ProtectedRoutes><Settings/></ProtectedRoutes>} /> 
+            <Route path="/home" element={<ProtectedRoutes><Home/></ProtectedRoutes>} /> 
+            <Route path="/" element = {<Login/>}/>
+            <Route path="/registration" element = {<Registration/>}/>
+            </Routes>
+            </UserAuthContextProvider>
+            </Col>
+        </Row>
+
+        </Container>
+
+    
+        
+   
+    );
+}
+
+export default App;
+/*
+<div>
             <Header />
             <Sidebar />
                 <div className="contents-container">
                     <BrowserRouter>
                         <Routes>
-                            <Route path="/" element={<Home />}>
-                                <Route path="/home" element={<Home />} />
-                            </Route>
+                            <Route path="" element={}>
+                            <Route path="/registration" element={<Registration />} />
+                            </Route> 
+                             <Route path="/home" element={<Home />} />
                             <Route path="/my-profile" element={<MyProfile />} />
                             <Route path="/search-user" element={<SearchUser />} /> 
                             <Route path="/chats" element={<Chats />} />   
@@ -33,12 +67,4 @@ function App() {
                     </BrowserRouter>
                 </div>
             </div>
-       
-
-    
-        
-   
-    );
-}
-
-export default App;
+*/
