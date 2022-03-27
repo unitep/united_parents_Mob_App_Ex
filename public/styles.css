@@ -2,125 +2,135 @@
 
 /* ---------- Body Style ---------- */
 body {
-    background-color: #EDE7E3;
+  background-color: #EDE7E3;
   
-    font-family: 'Noto Sans', sans-serif;
-    font-size: 20px;
-    color: #1a1a1a;
-  }
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 20px;
+  color: #1a1a1a;
+}
+
+/* ---------- Page Content ---------- */
+/* Content must be in this container to be visible */
+.contents-container {
+  margin: 96px 5% 4% 20%; /* top | right | bottom | left*/
+}
+
+.content1,
+.content2,
+.content3 {
+  padding: 8px 40px 24px 40px;
+  margin-bottom: 60px;
+    
+  background-color: #fdfdfc;
+  border-radius: 8px;
+    border: solid #489FB5 4px;
+}
+    
+.content1 p,
+.content2 p,
+.content3 p {
+  margin-top: 18px;
+  line-height: 1.5;
+}
+    
+/* Divider */
+/* hr {
+  border: dotted #489FB5 8px;
+  border-bottom: none;
+  width: 10%;
+  margin: 60px auto;
+} */
+
+/* ---------- Fixed Header ---------- */
+/* Header Style */
+header {
+  position: fixed; /* fixed at the top when scrolling */
+  top: 0;
+  left: 0;
   
-  /* ---------- Fixed Header & Sidebar ---------- */
-  /* Header Style */
-  header {
-    position: fixed; /* fixed at the top when scrolling */
-    top: 0;
-    left: 0;
+  height: 60px;
+  width: 100%;
   
-    height: 60px;
-    width: 100%;
+  background-color: #82C0CC;
+  border: 0;
+  border-radius: 0 0 8px 0; /* top-left | top-right | bottom-right | bottom-left */
+  box-shadow: 2px 0 8px #999999; /* offset-x | offset-y | blur-radius | spread-radius | color */
+}
   
-    background-color: #82C0CC;
-    border: 0;
-    border-radius: 0 0 8px 0; /* top-left | top-right | bottom-right | bottom-left */
-    box-shadow: 2px 0 8px #999999; /* offset-x | offset-y | blur-radius | spread-radius | color */
-  }
+/* Font Style of the header title */
+.header-title {
+  padding-top: 12px;
+  padding-left: 20%;
   
-  /* Font Style of the header title */
-  .header-title {
-    padding-top: 12px;
-    padding-left: 20%;
+  font-family: 'Nunito', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #1a1a1a;
+}
   
-    font-family: 'Nunito', sans-serif;
-    font-size: 24px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    color: #1a1a1a;
-  }
+.change-language {
+  position: absolute;
+  right: 5%;
+
+  text-decoration: none;
+  color: #4d4d4d;
+}
   
-  /* Fixed Sidebar with icons & text */
-  .sidebar {
-    position: fixed; /* fixed at the left site when scrolling */
-    top: 60px; /* Starts at the end of the header height */
-    left: 0;
-    bottom: 0;
-    width: 15%; /* Takes up only 15% of the total screen width */
-    overflow-x: hidden; /* Prrevents horizontal scrolling*/
+/* ---------- Fixed Sidebar with icons & text ---------- */
+.sidebar {
+  position: fixed; /* fixed at the left site when scrolling */
+  top: 60px; /* Starts at the end of the header height */
+  left: 0;
+  bottom: 0;
+  width: 15%; /* Takes up only 15% of the total screen width */
+  overflow-x: hidden; /* Prrevents horizontal scrolling*/
   
-    background-color: #fff;
-    border: 0;
-    border-radius: 0 8px 0 0; /* top-left | top-right | bottom-right | bottom-left */
-    box-shadow: 0 2px 8px #cccccc; /* offset-x | offset-y | blur-radius | spread-radius | color */
-  }
+  background-color: #fff;
+  border: 0;
+  border-radius: 0 8px 0 0; /* top-left | top-right | bottom-right | bottom-left */
+  box-shadow: 0 2px 8px #cccccc; /* offset-x | offset-y | blur-radius | spread-radius | color */
+}
   
-  /* Container with icons */
-  .icons-container {
-    margin: 36px 5px; /* top & bottom | left& right */
-    position: static; /* positioned according to the flow of the page */
+/* Container for each icon */
+.icon-container {
+  margin: 36px 5px; /* top & bottom | left& right */
+  position: static; /* positioned according to the flow of the page */
+    
+  text-align: center;
+  color: #808080;
+}
+   
+/* Style of each icon */
+.material-icons {
+  font-size: 36px;
+}
+
+/* Style of the anchor tag */
+.icon-container a {
+  text-decoration: none;
+  color: #808080;
+}
   
-    text-align: center;
-    color: #808080;
-  }
-  
-  .icons-container a {
-    text-decoration: none;
-    color: #808080;
-  }
-  
-  /* Size of the icons */
-  .material-icons {
-    font-size: 36px;
-  }
-  
-  /* Font sytle of the icons text */
-  .icons p {
+/* Font sytle of the icons text */
+.icons p {
   font-family: 'Nunito', sans-serif;
   font-size: 16px;
-  }
+}
   
-  /* Change color of current icon */
-  .icons-container .active{
-    color: #ffa62b;
-    font-weight: 600;
-    text-decoration: underline solid 2px;
-  }
-  
-  /* Change color of icons & text on hover */
-  .icons-container a:hover {
-    color: #ffa62b;
-    text-decoration: underline solid 2px;
-  }
-  
-  /* ---------- Page Content ---------- */
-  .contents-container {
-  margin: 96px 5% 4% 20%; /* top | right | bottom | left*/
-  }
-  
-  .content1,
-  .content2,
-  .content3 {
-    padding: 8px 40px 24px 40px;
-    margin-bottom: 60px;
-  
-    background-color: #fdfdfc;
-    border-radius: 8px;
-    border: solid #489FB5 4px;
-  }
-  
-  .content1 p,
-  .content2 p,
-  .content3 p {
-    margin-top: 18px;
-    line-height: 1.5;
-   }
-  
-  /* Divider */
-  /* hr {
-    border: dotted #489FB5 8px;
-    border-bottom: none;
-    width: 10%;
-    margin: 60px auto;
-  } */
-  
+/* Change color of icons & text on hover */
+.icon-container a:hover {
+  color: #ffa62b;
+  text-decoration: underline solid 2px;
+}
+
+/* Change color of current icon */
+/* .icon-container .active {
+  color: #ffa62b;
+  font-weight: 600;
+  text-decoration: underline solid 2px;
+}
+*/
   
   
   /* ----------- Media query ---------- */
@@ -141,7 +151,7 @@ body {
   
     .sidebar { top: 40px; }
   
-    .icons p { display: none; }
+    .icon-container p { display: none; }
   }
   
   .content1,

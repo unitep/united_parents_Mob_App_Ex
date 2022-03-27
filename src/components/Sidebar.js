@@ -1,62 +1,64 @@
 import React from "react";
 
+/* Navigationbar with icons which is fixed on the left side of each page (except Login & Registration) */
 function Sidebar() {
-    return (
-    <aside class="sidebar">
-      <div class="icons">
-        <div class="icons-container">
-          <a href="home" class="active">
-          <span class="material-icons">home</span>
+
+  return (
+    <aside className="sidebar">
+      <div className="icons">
+
+      <div className="icon-container">
+        <a href="home">
+          <span className="material-icons">home</span>
           <p>Startseite</p>
-          </a>
-        </div>
-
-      <div class="icons-container">
+        </a>
+      </div>
+      
+      <div className="icon-container">
         <a href="my-profile">
-        <span class="material-icons">account_circle</span>
-        <p>Mein Profil</p>
+          <span className="material-icons">account_circle</span>
+          <p>Mein Profil</p>
         </a>
-    </div>
+      </div>
 
 
-      <div class="icons-container">
+      <div className="icon-container">
         <a href="search-user">
-        <span class=" material-icons">map</span>
-        <p>User suchen</p>
+          <span className=" material-icons">map</span>
+          <p>User suchen</p>
         </a>
       </div>
 
-      <div class="icons-container">
+      <div className="icon-container">
         <a href="chats">
-        <span class="material-icons">forum</span>
-        <p>Chats</p>
+          <span className="material-icons">forum</span>
+          <p>Chats</p>
         </a>
       </div>
 
-      <div class="icons-container">
+      <div className="icon-container ">
         <a href="help-finances">
-        <span class="material-icons">contact_support</span>
-        <p>Hilfe & Finanzen</p>
+          <span className="material-icons">contact_support</span>
+          <p>Hilfe & Finanzen</p>
         </a>
       </div>
 
-      <div class="icons-container">
+      <div className="icon-container ">
         <a href="settings">
-        <span class="material-icons">settings</span>
-        <p>Einstellungen</p>
+          <span className="material-icons">settings</span>
+          <p>Einstellungen</p>
         </a>
       </div>
 
-      <div class="icons-container">
+      <div className="icon-container ">
         <a href="logout">
-        <span class="material-icons">logout</span>
-        <p>Abmelden</p>
+          <span className="material-icons">logout</span>
+          <p>Abmelden</p>
         </a>
       </div>
-
-  </div>
-</aside>
-);
+    </div>
+  </aside>
+  );
 }
  
 export default Sidebar;
