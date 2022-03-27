@@ -5,17 +5,19 @@ import Header from "./Header";
 import Sidebar from "./Sidebar";
 
  function ProtectedRoutes({children}) {
-    let {user} = useUserAuth()
-    if(!user){
+    let {user} = useUserAuth();
+
+    if(!user) {
       return  <Navigate to = "/"/>
-
     }
-  return( <div>
-      <Header />
-  <Sidebar />
-  {children}
-    </div>
-  ) 
-}
-export default ProtectedRoutes;
 
+  return( 
+    <div>
+      <Header />
+      <Sidebar />
+      {children}
+    </div>
+  ); 
+}
+
+export default ProtectedRoutes;
