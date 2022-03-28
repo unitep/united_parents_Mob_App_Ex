@@ -8,7 +8,9 @@ import Sidebar from "./Sidebar";
     let {user} = useUserAuth();
 
     if(!user) {
-      return  <Navigate to = "/"/>
+      return (
+        <Navigate to = "/"/>
+      );
     }
 
   return( 

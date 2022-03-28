@@ -11,12 +11,13 @@ import Help from "../pages/HelpFinances";
 import Settings from "../pages/Settings";
 import ProtectedRoutes from "./ProtectedRoutes";
 import Registration from "../pages/Registration";
-
-
-
+import SidebarLogReg from "./SidebarLogReg";
 
 function App() {
     return (
+        <div>
+        <SidebarLogReg />
+              
         <div className="contents-container">
         
             <UserAuthContextProvider>
@@ -33,10 +34,7 @@ function App() {
             
             </UserAuthContextProvider>
         </div>
-
-    
-        
-   
+        </div>    
     );
 }
 
