@@ -29,6 +29,7 @@ function App() {
                 <Route path="/settings" element={<ProtectedRoutes><Settings/></ProtectedRoutes>} /> 
                 <Route path="/home" element={<ProtectedRoutes><Home/></ProtectedRoutes>} /> 
                 <Route path="/" element = {<Login/>}/>
+                <Route path="/logout" element = {<Login/>}/>
                 <Route path="/registration" element = {<Registration/>}/>
             </Routes>
             

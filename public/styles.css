@@ -15,27 +15,7 @@ body,
 .contents-container {
   margin: 96px 20% 4% 20%; /* top | right | bottom | left*/  
 }
-    
-/* 
-.content1,
-.content2,
-.content3 {
-  padding: 8px 40px 24px 40px;
-  margin-bottom: 60px;
-    
-  background-color: #fdfdfc;
-  border-radius: 8px;
-  border: solid #489FB5 4px;
-}
-    
-.content1 p,
-.content2 p,
-.content3 p {
-  margin-top: 18px;
-  line-height: 1.5;
-}
-*/
-    
+  
 /* Divider */
 /*
 hr {
@@ -155,6 +135,26 @@ a.forgot-password {
   margin-bottom: 20px;
 }
 
+/* ---------- Home Content ---------- */
+.home-content1,
+.home-content2,
+.home-content3 {
+  width: 75vw;
+  padding: 18px 40px 18px 40px;
+  margin-bottom: 60px;
+    
+  background-color: #fdfdfc;
+  border-radius: 8px;
+  border: solid #489FB5 2px;
+}
+    
+.home-content1 p,
+.home-content2 p,
+.home-content3 p {
+  margin-top: 18px;
+  line-height: 1.5;
+}
+
 
    
 /* ---------- Fixed Header & Sidebar ---------- */
@@ -258,12 +258,12 @@ header {
   
   .icons p { display: none; }
 
-/*   
-  .content1,
-  .content2,
-  .content3 {
+   
+  .home-content1,
+  .home-content2,
+  .home-content3 {
     margin-bottom: 40px;
-  } */
+  }
   
   .sidebar-login-register { display: none;}
 
