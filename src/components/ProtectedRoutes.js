@@ -1,25 +1,29 @@
-import React from 'react'
-import { Navigate } from 'react-router-dom'
-import { useUserAuth } from '../context/UserAuthContext'
+import React, { useEffect } from "react";
+import { Navigate } from "react-router-dom";
+import { useUserAuth } from "../context/UserAuthContext";
 import Header from "./Header";
 import Sidebar from "./Sidebar";
 
- function ProtectedRoutes({children}) {
-    let {user} = useUserAuth();
+function ProtectedRoutes({ children }) {
+  const GetUser = async () => {
+    let { user } = await useUserAuth();
 
-    if(!user) {
-      return (
-        <Navigate to = "/"/>
-      );
+    if (!user) {
+      return <Navigate to="/" />;
     }
+  };
 
-  return( 
+  useEffect(() => {
+    GetUser();
+  }, []);
+
+  return (
     <div>
       <Header />
       <Sidebar />
       {children}
     </div>
-  ); 
+  );
 }
 
 export default ProtectedRoutes;

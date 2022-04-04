@@ -1,31 +1,18 @@
 /* ----- Custom Styles ----- */
-
 /* ---------- Body Style ---------- */
-html, 
-body,
-#root {
+.body {
+  height: 100vh;
+  width: 100vw;
+
   background-color: #EDE7E3;
-  
   font-family: 'Noto Sans', sans-serif;
   font-size: 20px;
   color: #1a1a1a;
 }
 
 /* ---------- Page Content ---------- */
-.contents-container {
-  margin: 96px 20% 4% 20%; /* top | right | bottom | left*/  
-}
-  
-/* Divider */
-/*
-hr {
-  border: dotted #489FB5 8px;
-  border-bottom: none;
-  width: 10%;
-  margin: 60px auto;
-} 
-*/
-  
+.contents-container { margin: 96px 20% 4% 20%; /* top | right | bottom | left*/ }
+    
 /* ---------- Login & Regsitration Content ---------- */
 /* Fixed Sidebar with welcome text */
 .sidebar-login-register {
@@ -39,12 +26,10 @@ hr {
   background-color: #fff;
   box-shadow: 0 2px 8px #cccccc; /* offset-x | offset-y | blur-radius | color */
 }
-
 .welcome-container {
   margin-top: 96px;
   display: inline-block;
 }
-
 .welcome-text {
   font-family: 'Nunito', sans-serif;
   font-size: 2.3vw;
@@ -60,10 +45,7 @@ hr {
   border-radius: 4px;
   box-shadow: 0 0 1em #cccccc; /* offset-x | offset-y | blur-radius | color*/
 }
-
-.card-body {
-  margin: 8px;
-}
+.card-body { margin: 8px; }
 
 /* Title Style*/
 .card h1 {
@@ -72,9 +54,7 @@ hr {
 }
 
 /* Div for E-Mail address */
-#email {
-  margin-bottom: 16px;
-}
+#email { margin-bottom: 16px; }
 
 /* Title for each input */
 label.form-label {
@@ -97,23 +77,15 @@ input.form-control:focus {
 }
 
 /* Div for Password */
-#password {
-  margin-bottom: 4px;
-}
-
-a.forgot-password {
-  font-size: 15px;
-}
-
-#rePassword {
-  margin-top: 16px;
-
-}
+#password { margin-bottom: 4px; }
+a.forgot-password { font-size: 15px; }
+#rePassword { margin-top: 16px; }
  
 /* Style of the button */
 .card button.w-100 {
   margin-top: 20px;
 
+  font-size: 18px;
   font-weight: 600;
   letter-spacing: 4px;
   color: #fff ;
@@ -124,16 +96,13 @@ a.forgot-password {
 
 /* Style of the button when on hover/focus */
 .card button.w-100:hover,
-.card button.w-100:focus
-{
+.card button.w-100:focus {
   background-color: #489fb5;
   border-color: transparent;
   box-shadow: none;
 }
 
-.w-100.text-center.mt-2 {
-  margin-bottom: 20px;
-}
+.w-100.text-center.mt-2 { margin-bottom: 20px; }
 
 /* ---------- Home Content ---------- */
 .home-content1,
@@ -146,8 +115,7 @@ a.forgot-password {
   background-color: #fdfdfc;
   border-radius: 8px;
   border: solid #489FB5 2px;
-}
-    
+}    
 .home-content1 p,
 .home-content2 p,
 .home-content3 p {
@@ -155,8 +123,53 @@ a.forgot-password {
   line-height: 1.5;
 }
 
+/* ---------- Search User Content ---------- */
+/* Hide Spinners from Number input */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
 
-   
+.search-zip-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+#zip-code { margin-left: 20%; }
+.zip-input, 
+.search-radius {
+  margin-right: 40px;
+  margin-bottom: 20px;
+  padding: 4px;
+
+  background-color: #fdfdfc;
+  border: solid 2px #a6a6a6;
+  border-radius: 8px;
+}
+.zip-input:focus, 
+.search-radius:focus {
+  outline: none;
+  border-color: #489fb5;
+  box-shadow: 2px 2px 8px 1px #82c0cc
+}
+#zip-code input::placeholder {
+  padding: 8px;
+  font-size: 16px;
+}
+.zip-button {
+  font-size: 18px;
+  color: #fdfdfc;
+  background-color: #16697a;
+  border-color: transparent;
+  border-radius: 8px;
+}
+.zip-button:hover {
+  background-color: #489fb5
+}
+
 /* ---------- Fixed Header & Sidebar ---------- */
 /* Header Style */
 header {  
@@ -208,16 +221,12 @@ header {
   text-align: center;
   color: #808080;
 }
-  
 .icons-container a {
   text-decoration: none;
   color: #808080;
 }
-  
 /* Size of the icons */
-.material-icons {
-  font-size: 36px;
-}
+.material-icons { font-size: 36px; }
   
 /* Font sytle of the icons text */
 .icons p {
@@ -241,40 +250,27 @@ header {
 /* ----------- Media query ---------- */
 /* Change layout for smaller screen sizes */
 @media only screen and (max-width: 768px) {
-  body, 
-  html,
-  #root { font-size: 16px; }
-    
+  .body { font-size: 16px; } 
   .contents-container { margin-top: 76px; }
-  
   header { height: 40px; }
-  
   .header-title {
     padding-top: 10px;
     font-size: 18px;
   }
-  
-  .sidebar { top: 40px; }
-  
-  .icons p { display: none; }
 
+  .sidebar { top: 40px; }
+  .icons p { display: none; }
    
   .home-content1,
   .home-content2,
-  .home-content3 {
-    margin-bottom: 40px;
-  }
+  .home-content3 { margin-bottom: 40px; }
   
   .sidebar-login-register { display: none;}
-
   .card {
     width: auto;
     margin: auto;
   }
-
-  .card h1 {
-    font-size: 24px;
-  }
+  .card h1 { font-size: 24px; }
 
 
 }

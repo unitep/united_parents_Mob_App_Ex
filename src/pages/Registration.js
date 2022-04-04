@@ -28,7 +28,7 @@ const handleSubmit = async (e) =>{
 }
 
     return (
-       <>
+       <div className="login-container">
        <Card>
            <Card.Body>
             <h1 className="text-center mb-4">Registrieren</h1>
@@ -61,7 +61,7 @@ const handleSubmit = async (e) =>{
            </div>
        </Card>
            
-       </> 
+       </div> 
     );
 }
 

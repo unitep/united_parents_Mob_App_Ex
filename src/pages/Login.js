@@ -28,7 +28,7 @@ function Login() {
     }
         
     return ( 
-        <>
+        <div className="login-container">
         <Card>
             <Card.Body>
              <h1 className="text-center mb-4">Login</h1>
@@ -47,7 +47,7 @@ function Login() {
 
                  <a className="forgot-password" href="#">Passwort vergessen</a>
                  
-                 <Button className = "w-100" type="register">Login</Button>
+                 <Button className ="w-100" type="register">Login</Button>
              </Form>
  
             </Card.Body>
@@ -56,7 +56,7 @@ function Login() {
             </div> 
         </Card>
                 
-    </>
+    </div>
     );
 }
 
