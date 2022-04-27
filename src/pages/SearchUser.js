@@ -69,9 +69,9 @@ function SearchUser() {
                          */}
                             <img className="circle-img" src="https://i.pravatar.cc/200"></img>
                             {/* Catch corresponding user full name from DB  */}
-                            <h1>Vorname Nachname</h1>
+                            <h1>Kendra Birringer</h1>
                             {/* Catch corresponding user ZIP code from DB  */}
-                            <p>Postleitzahl Stadt</p>
+                            <p>60529 Frankfurt</p>
                             {/* Link user to chat page with correspondinh user */}
                             <button className="send-msg-btn">
                                 <span className="material-icons">forum</span>

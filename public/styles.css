@@ -213,6 +213,7 @@ a.forgot-password { font-size: 15px; }
   margin-top: 16px;
 }
 
+
 /* ---------- Search User Content ---------- */
 /* Hide Spinners from Number input */
 input[type=number]::-webkit-inner-spin-button,
@@ -273,7 +274,7 @@ input[type=number]::-webkit-outer-spin-button {
 .column {
   float: left;
   width: 25%;
-  padding: 0 10px;  
+  padding: 0 10px;
 }
 
 .zip-result-card {
@@ -285,6 +286,9 @@ input[type=number]::-webkit-outer-spin-button {
   border: solid #489FB5 2px;
   box-shadow: 0 4px 8px 0 #cccccc;
 }
+
+.zip-result-card h1 { font-size: 2vw; }
+.zip-result-card p { font-size: 1.5vw; }
 
 .circle-img {
   margin-bottom: 12px;
@@ -360,4 +364,7 @@ input[type=number]::-webkit-outer-spin-button {
     display: block;
     margin-bottom: 20px;
   }
+
+.zip-result-card h1 { font-size: 18px; }
+.zip-result-card p { font-size: 16px; }
 }
