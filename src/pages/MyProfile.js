@@ -11,7 +11,7 @@ function MyProfile() {
                     <img className="circle-img" src="https://i.pravatar.cc/200"></img>
                 </div>
                 <div className="profile-info">
-                    <h1>Vorname Nachname</h1>
+                    <h1>Benutzername</h1>
                     <h2><strong>Alter: </strong>22</h2>
                     <h2><strong>Hochschule: </strong>Frankfurt University of Applied Sciences</h2>
                     <h2><strong>Studiengang: </strong>International Business</h2>

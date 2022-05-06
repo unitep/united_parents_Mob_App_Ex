@@ -4,25 +4,30 @@ function Home() {
     return (
         <div>
             <div className="content-box home">
-                <h1>Content 1</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Fusce id velit ut tortor
-                    pretium. Mauris nunc congue nisi vitae suscipit. Integer eget aliquet nibh
-                    praesent. Ipsum dolor sit amet consectetur. 
-                </p>
+                <h2>Ein Kind zu haben bedeutet immer, ein Stück seines Herzens außerhalb seines
+                    Körpers zu tragen.</h2>
             </div>
 
             <div className="content-box home">
-                <h1>Content 2</h1>
-                <p>Tincidunt dui ut ornare lectus sit amet. Placerat orci nulla pellentesque
-                    dignissim enim sit amet venenatis. Cras sed felis eget velit aliquet sagittis id
-                    consectetur purus. Massa vitae tortor condimentum lacinia quis. Aenean pharetra
-                    magna ac placerat vestibulum lectus mauris ultrices eros. Urna nec tincidunt
-                    praesent semper feugiat nibh.
+                <div className="uni-logo">
+                    <img src="./images/fra-uas-logo.svg" className="logo-img"></img>
+                </div>
+                <h1>Osterferienbetreuung 2022</h1>
+
+                <p>vom 11.4.-22.4. an der Frankfurt University of Applied Science für Kinder im
+                    Alter von 6 bis 12. Unter dem Motto: „Frankfurt durch die Kamera“ werden wir
+                    spannende Ausflüge machen, Frankfurt durch die Kamera in den Blick nehmen, einen
+                    Animationsfilm drehen und gemeinsam viel Spaß haben. Betreuungs-Zeitraum ist
+                    täglich von 08:30 Uhr bis 17:00 Uhr. Anmeldeschluss ist der 18.03.2022! Infos zu
+                    Programm und Anmeldung <u>hier</u>.
                 </p>
+
             </div>
 
             <div className="content-box home">
+            <div className="uni-logo">
+                    <img src="./images/fra-uas-logo.svg" className="logo-img"></img>
+                </div>
                 <h1>Content 3</h1>
                 <p>Dui id ornare arcu odio. Pulvinar elementum integer enim neque volutpat. Sit
                     amet mattis vulputate enim nulla aliquet porttitor lacus. Dictum fusce ut

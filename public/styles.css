@@ -11,49 +11,66 @@
 /* ---------- Fixed Header & Sidebar ---------- */
 /* Header Style */
 header {
+  display: inline-flex;
   position: fixed; /* fixed at the top when scrolling */
   top: 0;
   left: 0;
-  height: 60px;
+  height: 80px;
   width: 100%;
   background-color: #82C0CC;
   border: 0;
   border-radius: 0 0 8px 0; /* top-left | top-right | bottom-right | bottom-left */
-  box-shadow: 2px 0 8px #999999; /* offset-x | offset-y | blur-radius | color */
+  box-shadow: 2px 0 2px #999999; /* offset-x | offset-y | blur-radius | color */
 }
 
 /* Font Style of the header title */
 .header-title {
-  padding-top: 12px;
-  padding-left: 20%;
-  font-family: 'Nunito', sans-serif;
-  font-size: 24px;
+  position: relative;
+  margin-top: 20px;
+  margin-left: 20%;
+  font-family: 'Laila', sans-serif;
+  font-size: 1.6em;
   font-weight: 600;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   color: #1a1a1a;
+}
+
+.change-language a {
+  position: absolute;
+  right: 2%;
+  top: 34%;
+  text-decoration: none;
+  color: #4d4d4d;
 }
 
 /* Fixed Sidebar with icons & text */
 .sidebar {
   position: fixed; /* fixed at the left site when scrolling */
-  top: 60px; /* Starts at the end of the header height */
+  top: 80px; /* Starts at the end of the header height */
   left: 0;
   bottom: 0;
   width: 15%; /* Takes up only 15% of the total screen width */
   overflow-x: hidden; /* Prevents horizontal scrolling*/
   background-color: #fff;
   border: 0;
-  border-radius: 0 8px 0 0; /* top-left | top-right | bottom-right | bottom-left */
+  border-radius: 0 8px 0; /* top-left | top-right | bottom-right | bottom-left */
   box-shadow: 0 2px 8px #cccccc; /* offset-x | offset-y | blur-radius | color */
+}
+
+.icons {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 /* Container with icons */
 .icons-container {
-  margin: 36px 5px; /* top & bottom | left& right */
   position: static; /* positioned according to the flow of the page */
   text-align: center;
   color: #808080;
 }
+
 
 .icons-container a {
   text-decoration: none;
@@ -83,7 +100,7 @@ header {
 }
 
 /* ---------- Page Content ---------- */
-.contents-container { margin: 96px 20% 4%; /* top | right | bottom | left*/
+.contents-container { margin: 116px 20% 4%; /* top | right | bottom | left*/
 }
 
 /* ---------- Login & Regsitration Content ---------- */
@@ -187,10 +204,24 @@ a.forgot-password { font-size: 15px; }
 }
 
 /* ---------- Home Content ---------- */
+.home { text-align: center; }
 .home p {
   margin-top: 16px;
   line-height: 1.5;
+  text-align: left;
 }
+
+.uni-logo {
+  height: 110px;
+  width: 210px;
+  display: inline-flex;
+}
+
+.logo-img {
+  width: 100%;
+  height: 100%;
+}
+
 
 /* ---------- My Profile Content ---------- */
 .profile { display: inline-flex; }
@@ -321,17 +352,19 @@ input[type=number]::-webkit-outer-spin-button {
 /* Change layout for smaller screen sizes */
 @media only screen and (max-width: 768px) {
   .body { font-size: 16px; }
-  .contents-container { margin-top: 76px; }
+  .contents-container { margin-top: 96px; }
 
   /* Fixed Header */
-  header { height: 40px; }
+  header { height: 60px; }
+
   .header-title {
-    padding-top: 10px;
-    font-size: 18px;
+    margin-top: 20px;
+    font-size: 16px;
   }
+  .change-language a { font-size: 14px; }
 
   /* Fixed Sidebar */
-  .sidebar { top: 40px; }
+  .sidebar { top: 60px; }
   .icons p { display: none; }
 
   /* Login/Register Content */
@@ -341,6 +374,13 @@ input[type=number]::-webkit-outer-spin-button {
     margin: auto;
   }
   .card h1 { font-size: 24px; }
+
+  /* Home Content */
+  .uni-logo {
+    height: 60px;
+    width: 160px;
+    margin-bottom: 12px;
+  }
 
   /* My Profile Content*/
   .profile { display: block; }
