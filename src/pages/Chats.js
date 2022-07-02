@@ -1,20 +1,37 @@
 import React, { useState, useEffect } from "react";
-import { database, auth } from "../Firebase";
 import { uid } from  "uid";
+
+import { database, auth } from "../Firebase";
 import { set, ref, onValue } from "firebase/database";
 
 
 function Chats() {
 
-    const username = auth.currentUser.email;
+    auth.onAuthStateChanged(function(user) {
+        if (user) {
+          console.log("User is logged in");
+        } else {
+            console.log("User is logged out");
+        }
+      });
+
+    const user = auth.currentUser;
+
+    const [userMail, setUserMail] = useState (user.email);
+
+    useEffect(() => {
+        setUserMail(userMail)
+        console.log("Das kommt aus dem Effekt: "+ userMail);
+    })
+
 
     const [msg, sendMsg] = useState ("");
     const [msgs1, sendMsgsByUser] = useState([]);
     const [msgs2, sendMsgsByPartner] = useState([]);
-
+      
     const handleSubmit = (e) => {
         sendMsg(e.target.value);
-    };
+    }
       
     // read
 
@@ -27,16 +44,16 @@ function Chats() {
         const data = snapshot.val();          
             if (data !== null) {
                 Object.values(data).map((msg) => {
-                    if(msg.usr == username){
+                    if(msg.usr == userMail){
                     sendMsgsByUser((oldArray) => [...oldArray, msg]);
                 }
-                    if(msg.usr !== username){
+                    if(msg.usr !== userMail){
                     sendMsgsByPartner((oldArray) => [...oldArray, msg]);
                 }            
             });
             }
         });
-    }, []);
+    }, [])
 
     // write
 
@@ -44,43 +61,52 @@ function Chats() {
         const uuid = uid();
 
         set(ref(database, `/${Date.now()}`), {
-            usr : username,
+            usr : user.email,
             uid : uuid,
             msg : msg,
             time : Date.now()
         });
 
         sendMsg("");
-    };
+    }
 
+    function checkSide(a) {
+        let result;
+        if (a != userMail) {
+          result = 'left';
+          console.log("result = "+result);
+        } else {
+          result = 'right';
+          console.log("result = "+result);
+        }
+        return result;
+      }
+
+    const ChatLog = () => {
+        return (
+        <div>
+        {msgs1.map((msg) => (
+            <div className="chat-rightside">
+                    <p align = {checkSide(msg.usr)}>
+                    <h1>{msg.msg}</h1>
+                    <h4>User: {msg.usr}</h4>
+                    <button>update</button>
+                    <button>delete</button>
+                    </p>
+                </div>
+            ))}
+        </div>
+        )
+        }
+    
     return (
         <div className="Chat-Box">
-        
         <input type="text" value={msg} onChange={handleSubmit}/>
         <button onClick={writeToDatabase}>submit</button>
-        
-        {msgs1.map((msg) => (
-        <>
-                <p align = "right">
-                <h1>{msg.msg}</h1>
-                <h4>User: {msg.usr}</h4>
-                <button>update</button>
-                <button>delete</button></p>
-                </>
-        ))}
-
-        {msgs2.map((msg) => (
-        <>
-                <p align = "left">
-                <h1>{msg.msg}</h1>
-                <h4>User: {msg.usr}</h4>
-                <button>update</button>
-                <button>delete</button></p>
-                </>
-        ))}
+        <ChatLog />
         </div>
-    );
+        )
 }
 
 
-export default Chats
+export default Chats;
