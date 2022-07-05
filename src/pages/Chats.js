@@ -13,7 +13,7 @@ function Chats() {
         } else {
             console.log("User is logged out");
         }
-      });
+      })
 
     const user = auth.currentUser;
 
@@ -24,10 +24,8 @@ function Chats() {
         console.log("Das kommt aus dem Effekt: "+ userMail);
     })
 
-
     const [msg, sendMsg] = useState ("");
-    const [msgs1, sendMsgsByUser] = useState([]);
-    const [msgs2, sendMsgsByPartner] = useState([]);
+    const [msgs1, sendMsgAll] = useState([]);
       
     const handleSubmit = (e) => {
         sendMsg(e.target.value);
@@ -36,20 +34,14 @@ function Chats() {
     // read
 
     useEffect(() => {
-        onValue(ref(database), (snapshot) => {
 
-        sendMsgsByUser([]);
-        sendMsgsByPartner([]);
+        onValue(ref(database), (snapshot) => {
+        sendMsgAll([]);
 
         const data = snapshot.val();          
             if (data !== null) {
                 Object.values(data).map((msg) => {
-                    if(msg.usr == userMail){
-                    sendMsgsByUser((oldArray) => [...oldArray, msg]);
-                }
-                    if(msg.usr !== userMail){
-                    sendMsgsByPartner((oldArray) => [...oldArray, msg]);
-                }            
+                    sendMsgAll((oldArray) => [...oldArray, msg]);         
             });
             }
         });
@@ -82,14 +74,30 @@ function Chats() {
         return result;
       }
 
+    function convertUnix(a) {
+        var date = new Date(a * 1000);
+        let datemsg = date.toString();
+        return datemsg;
+    }
+
+    function ChatInput() {
+        return (
+        <div className="chat-input" align ="right">
+        <input type="text" value={msg} onChange={handleSubmit}/>
+        <button onClick={writeToDatabase}>submit</button>
+        </div>
+        )
+    }
+
     const ChatLog = () => {
         return (
         <div>
         {msgs1.map((msg) => (
-            <div className="chat-rightside">
+            <div className="chat-log">
                     <p align = {checkSide(msg.usr)}>
-                    <h1>{msg.msg}</h1>
+                    <h2>{msg.msg}</h2>
                     <h4>User: {msg.usr}</h4>
+                    <h4>Time: {convertUnix(msg.time)}</h4>
                     <button>update</button>
                     <button>delete</button>
                     </p>
@@ -100,10 +108,9 @@ function Chats() {
         }
     
     return (
-        <div className="Chat-Box">
-        <input type="text" value={msg} onChange={handleSubmit}/>
-        <button onClick={writeToDatabase}>submit</button>
-        <ChatLog />
+        <div className="ChatView">
+        <p><ChatLog /></p>
+        <p>{ChatInput()}</p>
         </div>
         )
 }
