@@ -7,15 +7,16 @@ import { getDatabase } from "firebase/database";
 
 const firebaseConfig = {
 
-    apiKey: "AIzaSyCC9nMYEDcR0v5VJ4HQ_EisCU64Qs4yGlg",
-    authDomain: "united-parents-app-grp5.firebaseapp.com",
-    databaseURL: "https://united-parents-app-grp5-default-rtdb.europe-west1.firebasedatabase.app",
-    projectId: "united-parents-app-grp5",
-    storageBucket: "united-parents-app-grp5.appspot.com",
-    messagingSenderId: "994199980314",
-    appId: "1:994199980314:web:0e0095358c190e11f584a3"
+  apiKey: "AIzaSyBpNafl5F0Xxei3rysQ_u0Pfbud0l4hEz8",
+  authDomain: "united-parents-chat-function.firebaseapp.com",
+  databaseURL: "https://united-parents-chat-function-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "united-parents-chat-function",
+  storageBucket: "united-parents-chat-function.appspot.com",
+  messagingSenderId: "742675114491",
+  appId: "1:742675114491:web:f6a57800c364c8c4e8c35e"
 
-  };
+};
+
 
 const app = initializeApp(firebaseConfig)
 export const auth = getAuth(app)
